@@ -1,0 +1,17 @@
+
+{% extends "base.html" %}
+{% block title %}Login - BlogSpace{% endblock %}
+{% block content %}
+<section class="card auth">
+    <h1>Login</h1>
+    <form method="POST">
+        <input name="username" placeholder="Username" required>
+        <input type="password" name="password"
+               placeholder="Password" required>
+        <button type="submit">Login</button>
+    </form>
+    <p>Don't have an account?
+        <a href="{{ url_for('register') }}">Register</a>
+    </p>
+</section>
+{% endblock %}
