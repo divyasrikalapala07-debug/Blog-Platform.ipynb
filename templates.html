@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}BlogSpace{% endblock %}</title>
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<header>
+    <a class="brand" href="{{ url_for('index') }}">BlogSpace ✍️</a>
+    <nav>
+        <a href="{{ url_for('index') }}">Home</a>
+        {% if session.get('user_id') %}
+            <span>Hello, {{ session.get('username') }}</span>
+            <a href="{{ url_for('logout') }}">Logout</a>
+        {% else %}
+            <a href="{{ url_for('login') }}">Login</a>
+            <a href="{{ url_for('register') }}">Register</a>
+        {% endif %}
+    </nav>
+</header>
+
+<main class="container">
+    {% for category, message in get_flashed_messages(with_categories=true) %}
+        <p class="message {{ category }}">{{ message }}</p>
+    {% endfor %}
+    {% block content %}{% endblock %}
+</main>
+
+<footer>BlogSpace — Write, Share and Discuss</footer>
+</body>
+</html>
