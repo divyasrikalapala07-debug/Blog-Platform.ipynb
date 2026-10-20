@@ -1,0 +1,14 @@
+
+{% extends "base.html" %}
+{% block title %}Edit Post - BlogSpace{% endblock %}
+{% block content %}
+<section class="card">
+    <h1>Edit Your Post</h1>
+    <form method="POST">
+        <input name="title" value="{{ post.title }}" required>
+        <textarea name="content" rows="7"
+                  required>{{ post.content }}</textarea>
+        <button type="submit">Save Changes</button>
+    </form>
+</section>
+{% endblock %}
