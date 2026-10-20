@@ -1,0 +1,43 @@
+
+{% extends "base.html" %}
+{% block title %}{{ post.title }} - BlogSpace{% endblock %}
+{% block content %}
+<article class="card">
+    <p class="muted">Written by {{ post.username }}</p>
+    <h1>{{ post.title }}</h1>
+    <p class="post-content">{{ post.content }}</p>
+
+    {% if session.get('user_id') == post.user_id %}
+    <a href="{{ url_for('edit_post', post_id=post.id) }}">Edit post</a>
+    <form method="POST"
+          action="{{ url_for('delete_post', post_id=post.id) }}"
+          onsubmit="return confirm('Delete this post?')">
+        <button class="delete" type="submit">Delete post</button>
+    </form>
+    {% endif %}
+</article>
+
+<section class="card">
+    <h2>Comments ({{ comments|length }})</h2>
+    {% for comment in comments %}
+        <div class="comment">
+            <strong>{{ comment.username }}</strong>
+            <p>{{ comment.content }}</p>
+            <small>{{ comment.created_at }}</small>
+        </div>
+    {% else %}
+        <p>No comments yet. Start the conversation!</p>
+    {% endfor %}
+
+    {% if session.get('user_id') %}
+    <form method="POST"
+          action="{{ url_for('add_comment', post_id=post.id) }}">
+        <textarea name="content" placeholder="Write a comment..."
+                  rows="3" required></textarea>
+        <button type="submit">Add Comment</button>
+    </form>
+    {% else %}
+        <p><a href="{{ url_for('login') }}">Login</a> to comment.</p>
+    {% endif %}
+</section>
+{% endblock %}
