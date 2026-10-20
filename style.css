@@ -1,0 +1,159 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f3f5fb;
+    color: #182238;
+    line-height: 1.6;
+}
+
+header {
+    background: white;
+    padding: 18px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    border-bottom: 1px solid #e1e6ef;
+}
+
+.brand {
+    font-size: 24px;
+    font-weight: bold;
+    color: #315ee8;
+}
+
+nav {
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+
+a {
+    color: #315ee8;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.container {
+    max-width: 850px;
+    margin: auto;
+    padding: 25px 18px 60px;
+}
+
+.hero {
+    padding: 30px 0;
+}
+
+.hero h1 {
+    font-size: 42px;
+    margin-bottom: 5px;
+}
+
+.card {
+    background: white;
+    padding: 24px;
+    margin: 20px 0;
+    border-radius: 14px;
+    border: 1px solid #e2e7f0;
+    box-shadow: 0 5px 18px #1720330a;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0 14px;
+    border: 1px solid #cfd7e5;
+    border-radius: 8px;
+    font: inherit;
+}
+
+button {
+    padding: 11px 18px;
+    border: none;
+    border-radius: 8px;
+    background: #315ee8;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #2448bc;
+}
+
+.delete {
+    background: #c83232;
+}
+
+.actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.actions form {
+    margin: 0;
+}
+
+.post-content {
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+.muted, small {
+    color: #6b7488;
+}
+
+.comment {
+    padding: 12px;
+    margin: 12px 0;
+    background: #f4f6fb;
+    border-radius: 8px;
+}
+
+.message {
+    padding: 12px;
+    border-radius: 8px;
+    background: #e8efff;
+}
+
+.message.error {
+    background: #ffeded;
+    color: #a32222;
+}
+
+.message.success {
+    background: #e4f8ec;
+    color: #087443;
+}
+
+.auth {
+    max-width: 460px;
+    margin: 35px auto;
+}
+
+footer {
+    text-align: center;
+    padding: 25px;
+    color: #6b7488;
+}
+
+@media (max-width: 600px) {
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .card {
+        padding: 17px;
+    }
+}
