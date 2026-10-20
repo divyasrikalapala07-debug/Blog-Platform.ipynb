@@ -36,5 +36,7 @@ SQLite, HTML and CSS.
 
 The database is created automatically.
 
-## Author
-Add your name here.
+## Divyasri kalapala
+
+##Live Demo
+https://divyasrikalapala07-debug.github.io/Blog-Platform.ipynb/
