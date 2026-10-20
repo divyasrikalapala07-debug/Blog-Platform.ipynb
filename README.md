@@ -39,4 +39,5 @@ The database is created automatically.
 ## Divyasri kalapala
 
 ##Live Demo
+
 https://divyasrikalapala07-debug.github.io/Blog-Platform.ipynb/
